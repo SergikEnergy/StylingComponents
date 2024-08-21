@@ -1,0 +1,22 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    /* fonts */
+    --base-font-family: Verdana, Helvetica, sans-serif;
+    --base-font-size: 16px;
+    /* colors, backgrounds */
+    --backgroundPages: rgb(221, 221, 221);
+    --backgroundButton: #e86630;
+    --borderButton: #8d8da6;
+
+    /* gaps, paddings, margins */
+    --auto-horizontal-margin: 0 auto;
+
+    --padding-small: 2rem;
+
+    /* sizes */
+    --desktop-max-width: 1240px;
+}

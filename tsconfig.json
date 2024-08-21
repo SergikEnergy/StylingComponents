@@ -20,9 +20,11 @@
         "baseUrl": ".",
         "paths": {
             "@public/*": ["./public/*"],
+            "@src/*": ["./src/*"],
             "@components/*": ["./src/components/*"],
             "@constants/*": ["./src/constants/*"],
-            "@types/*": ["./src/types/*"]
+            "@types/*": ["./src/types/*"],
+            "@assets/*": ["./src/assets/*"]
         },
         "plugins": [
             {
@@ -35,6 +37,6 @@
             }
         ]
     },
-    "include": ["src"],
+    "include": ["src", "src/context/.tsx"],
     "references": [{ "path": "./tsconfig.node.json" }]
 }
