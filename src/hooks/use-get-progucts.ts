@@ -21,7 +21,7 @@ export const useGetProducts = () => {
             try {
                 setIsError(false);
 
-                const data = await fetch('fff' + API_URL);
+                const data = await fetch(API_URL);
                 const dataToJSON = await data.json();
                 console.log(dataToJSON);
 
