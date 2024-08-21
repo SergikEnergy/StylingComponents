@@ -6,3 +6,18 @@ $bg-main: #fef5df;
 $bg-half-opacity: rgba(77, 77, 77, 0.7);
 
 $main-box-shadow: 0 0 5px #000;
+$error-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+$gap-medium: 24px;
+$gap-small: 8px;
+
+$card-width: 340px;
+$card-height: 450px;
+
+$base-font-family: Verdana Tahoma sans-serif;
+
+// can be used inside @media rules as a argument
+$desktop-lg: 1440px;
+
+$tablet: 768px;
+
+$mobile-small: 320px;

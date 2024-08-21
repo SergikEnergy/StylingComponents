@@ -1,7 +1,7 @@
 import { ProductItemType } from '@src/types/api';
 import { FC } from 'react';
 import classnames from 'classnames';
-import rateImg from '../../assets/imgs/rating.png';
+import rateImg from '../../assets/imgs/starRate.svg';
 
 import './product-card.scss';
 

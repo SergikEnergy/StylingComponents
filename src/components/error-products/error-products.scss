@@ -1,0 +1,60 @@
+$alert-color: #721c24;
+$alert-bg-color: #f8d7da;
+$alert-border-color: #f5c6cb;
+
+.error-alert {
+    position: fixed;
+    top: 150px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: $alert-bg-color;
+    border: 1px solid $alert-border-color;
+    border-radius: 4px;
+    padding: 12px 20px;
+    @extend %centered-between;
+    max-width: 600px;
+    width: 95%;
+    box-shadow: $error-box-shadow;
+    animation: slideDown 0.3s ease-out;
+
+    &__content {
+        display: flex;
+        align-items: center;
+    }
+
+    &__icon {
+        font-size: 20px;
+        margin-right: 10px;
+    }
+
+    &__message {
+        color: $alert-color;
+        font-size: 20px;
+        margin: 0;
+    }
+
+    &__close {
+        background: none;
+        border: none;
+        color: $alert-color;
+        font-size: 32px;
+        cursor: pointer;
+        padding: 0;
+        margin-left: 10px;
+
+        &:hover {
+            color: darken($alert-color, 10%);
+        }
+    }
+}
+
+@keyframes slideDown {
+    from {
+        transform: translate(-50%, -100%);
+        opacity: 0;
+    }
+    to {
+        transform: translate(-50%, 0);
+        opacity: 1;
+    }
+}

@@ -10,11 +10,11 @@ import { Loader } from '@src/components/loader';
 type MainPageProps = {
     isError: boolean;
     products: ProductItemType[];
+    onCloseError?: () => void;
 };
 
-export const MainPage: FC<MainPageProps> = ({ isError, products }) => {
+export const MainPage: FC<MainPageProps> = ({ isError, products, onCloseError }) => {
     const { isLoading } = useLoaderContext();
-    console.log(isLoading);
     return isLoading ? (
         <Loader />
     ) : (
@@ -23,7 +23,12 @@ export const MainPage: FC<MainPageProps> = ({ isError, products }) => {
                 <h1 className='demo__header_title'>Демонстрационное приложение</h1>
             </header>
             {!isError && <ProductsList products={products} />}
-            {isError && <ErrorProducts />}
+            {isError && (
+                <ErrorProducts
+                    message='Произошла ошибка получения товаров. Пожалуйста, попробуйте повторить запрос позже'
+                    onClose={onCloseError}
+                />
+            )}
         </main>
     );
 };

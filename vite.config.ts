@@ -11,8 +11,8 @@ export default defineConfig({
             scss: {
                 additionalData: `
 						@import "./src/sass/variables";
-						@import "./src/sass/functions";
 						@import "./src/sass/mixins";
+						@import "./src/sass/placeholders";
 					`,
             },
         },

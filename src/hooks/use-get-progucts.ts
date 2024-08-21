@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import { ProductItemType } from '@src/types/api';
 import { useFirstRender } from './use-first-render';
 import { API_URL } from '@constants/api';
@@ -11,6 +11,8 @@ export const useGetProducts = () => {
     const isMount = useFirstRender();
     const { setIsLoading } = useLoaderContext();
 
+    const closeError = useCallback(() => setIsError(false), []);
+
     useEffect(() => {
         if (!isMount) return;
         let timerId: TimeoutId;
@@ -19,7 +21,7 @@ export const useGetProducts = () => {
             try {
                 setIsError(false);
 
-                const data = await fetch(API_URL);
+                const data = await fetch('fff' + API_URL);
                 const dataToJSON = await data.json();
                 console.log(dataToJSON);
 
@@ -39,5 +41,5 @@ export const useGetProducts = () => {
         };
     }, []);
 
-    return { products, isError };
+    return { products, isError, closeError };
 };

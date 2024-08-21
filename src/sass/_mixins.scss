@@ -1,0 +1,26 @@
+@mixin fullsize-with-index($index, $position: absolute) {
+    position: $position;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: $index;
+}
+
+@mixin custom-icon-size($size: 32px) {
+    height: $size;
+    width: $size;
+}
+
+@mixin left-center-aligned($gap: $gap-small) {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: $gap;
+}
+
+@mixin same-width-columns-container($columns, $gap: $gap-medium) {
+    display: grid;
+    gap: $gap;
+    grid-template-columns: repeat($columns, 1fr);
+}

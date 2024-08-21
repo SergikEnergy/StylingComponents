@@ -1,0 +1,49 @@
+%absolute-full-size {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+}
+
+%centered-element {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+%centered-between {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+%base-font-style {
+    font-style: normal;
+    font-weight: 400;
+    line-height: 140%;
+    font-family: $base-font-family;
+}
+
+%full-size {
+    width: 100%;
+    height: 100%;
+}
+
+%bold-upper-case {
+    font-weight: 600;
+    text-transform: uppercase;
+    font-style: normal;
+}
+
+%card-temolate {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 2fr 2fr 1fr;
+}
+
+%horizontal-centered-full-width {
+    margin: 0 auto;
+    width: 100%;
+}
