@@ -3,6 +3,8 @@ import { FC } from 'react';
 import classnames from 'classnames';
 import rateImg from '../../assets/imgs/rating.png';
 
+import './product-card.scss';
+
 export const ProductCard: FC<ProductItemType> = ({
     category,
     description,

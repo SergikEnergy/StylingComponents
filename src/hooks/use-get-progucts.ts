@@ -9,7 +9,7 @@ export const useGetProducts = () => {
     const [products, setProducts] = useState<ProductItemType[]>([]);
     const [isError, setIsError] = useState(false);
     const isMount = useFirstRender();
-    const { startLoading, stopLoading } = useLoaderContext();
+    const { setIsLoading } = useLoaderContext();
 
     useEffect(() => {
         if (!isMount) return;
@@ -18,27 +18,24 @@ export const useGetProducts = () => {
         const fetchProducts = async () => {
             try {
                 setIsError(false);
-                startLoading();
 
-                //искусственная задержка для лоадера
-                timerId = setTimeout(async () => {
-                    const data = await fetch(API_URL);
-                    const dataToJSON = await data.json();
-                    if (Array.isArray(dataToJSON)) {
-                        setProducts(dataToJSON);
-                    }
-                }, 3000);
+                const data = await fetch(API_URL);
+                const dataToJSON = await data.json();
+                console.log(dataToJSON);
+
+                setProducts(dataToJSON);
             } catch (err: unknown) {
                 setIsError(true);
             } finally {
-                stopLoading();
+                setIsLoading(false);
             }
         };
-
-        fetchProducts();
+        setIsLoading(true);
+        //задержка искуственная
+        timerId = setTimeout(() => fetchProducts(), 2000);
 
         return () => {
-            if (timerId) clearTimeout(timerId);
+            clearTimeout(timerId);
         };
     }, []);
 

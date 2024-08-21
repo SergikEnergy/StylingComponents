@@ -2,7 +2,7 @@ import { ProductItemType } from '@src/types/api';
 import { FC } from 'react';
 import { ProductCard } from '../product-card';
 
-import './_product-list.scss';
+import './product-list.scss';
 
 type ProductsListProps = {
     products: ProductItemType[];

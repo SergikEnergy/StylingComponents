@@ -1,7 +1,15 @@
+body {
+    margin: 0;
+    padding: 0;
+    padding: 40px;
+    background-color: var(--backgroundPages);
+}
+
 #root {
-    max-width: var(--desktop-max-width);
+    width: 100%;
     min-height: 100vh;
     margin: var(--auto-horizontal-margin);
     text-align: center;
-    background-color: var(--backgroundPages);
+    max-width: var(--desktop-max-width);
+    margin: auto;
 }

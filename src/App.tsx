@@ -1,11 +1,10 @@
-import './App.css';
-import { LoaderContextProvider } from './context/loader-context-provider';
 import { MainPage } from './pages/main-page';
 
+import './App.css';
+import { useGetProducts } from './hooks/use-get-progucts';
+
 export const App = () => {
-    return (
-        <LoaderContextProvider>
-            <MainPage />
-        </LoaderContextProvider>
-    );
+    const { isError, products } = useGetProducts();
+
+    return <MainPage isError={isError} products={products} />;
 };

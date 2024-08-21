@@ -1,0 +1,13 @@
+.main__content {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+}
+
+.demo__header {
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    color: rgb(2, 2, 3);
+}

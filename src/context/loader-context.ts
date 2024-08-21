@@ -2,14 +2,12 @@ import { createContext } from 'react';
 
 type LoaderContextType = {
     isLoading: boolean;
-    startLoading: () => void;
-    stopLoading: () => void;
+    setIsLoading: (value: boolean) => void;
 };
 
 const initialContext: LoaderContextType = {
     isLoading: false,
-    startLoading: () => {},
-    stopLoading: () => {},
+    setIsLoading: () => {},
 };
 
 export const LoaderContext = createContext<LoaderContextType>(initialContext);
