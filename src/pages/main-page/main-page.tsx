@@ -20,7 +20,7 @@ export const MainPage: FC<MainPageProps> = ({ isError, products, onCloseError })
     ) : (
         <main className='main__content'>
             <header className='demo__header'>
-                <h1 className='demo__header_title'>Демонстрационное приложение</h1>
+                <h1 className='demo__header_title'>Demo styling components</h1>
             </header>
             {!isError && <ProductsList products={products} />}
             {isError && (

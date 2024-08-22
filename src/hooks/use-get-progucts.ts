@@ -23,7 +23,6 @@ export const useGetProducts = () => {
 
                 const data = await fetch(API_URL);
                 const dataToJSON = await data.json();
-                console.log(dataToJSON);
 
                 setProducts(dataToJSON);
             } catch (err: unknown) {

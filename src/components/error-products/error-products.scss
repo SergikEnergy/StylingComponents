@@ -9,10 +9,10 @@ $alert-border-color: #f5c6cb;
     transform: translateX(-50%);
     background-color: $alert-bg-color;
     border: 1px solid $alert-border-color;
-    border-radius: 4px;
+    border-radius: 10px;
     padding: 12px 20px;
     @extend %centered-between;
-    max-width: 600px;
+    max-width: 800px;
     width: 95%;
     box-shadow: $error-box-shadow;
     animation: slideDown 0.3s ease-out;
@@ -23,13 +23,13 @@ $alert-border-color: #f5c6cb;
     }
 
     &__icon {
-        font-size: 20px;
-        margin-right: 10px;
+        font-size: 36px;
+        margin-right: 8px;
     }
 
     &__message {
         color: $alert-color;
-        font-size: 20px;
+        font-size: 30px;
         margin: 0;
     }
 
@@ -37,11 +37,14 @@ $alert-border-color: #f5c6cb;
         background: none;
         border: none;
         color: $alert-color;
-        font-size: 32px;
+        font-size: 38px;
         cursor: pointer;
         padding: 0;
         margin-left: 10px;
 
+        // встроенные sass функции для работы с цветом
+        // lighten(color, amount), darken(color, amount)
+        // opacify(color, amount), mix(color1, color2, weight)
         &:hover {
             color: darken($alert-color, 10%);
         }

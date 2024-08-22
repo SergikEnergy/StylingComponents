@@ -1,5 +1,10 @@
 import styled, { keyframes } from 'styled-components';
 
+type ErrorAlertProps = {
+    small?: boolean;
+    customradius?: string | number;
+};
+
 const slideDown = keyframes`
   from {
     transform: rotate(0deg);
@@ -10,19 +15,23 @@ const slideDown = keyframes`
   }
 `;
 
-export const StyledErrorAlert = styled.div`
+export const StyledErrorAlert = styled.div<ErrorAlertProps>`
     position: fixed;
     top: 150px;
     left: 50%;
     transform: translateX(-50%);
     background-color: #f8d7da;
     border: 1px solid #f5c6cb;
-    border-radius: 4px;
+    ${({ customradius }) => {
+        if (!customradius) return 'border-radius: 10px;';
+        return `border-radius: ${typeof customradius === 'number' ? customradius + 'px' : customradius}`;
+    }};
     padding: 12px 20px;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    max-width: 800px;
+    // использование пропсов для кастомной стилизации
+    max-width: ${({ small }) => (small ? 600 : 800)}px;
     width: 95%;
     box-shadow: var(--error-box-shadow);
 
@@ -35,13 +44,13 @@ export const StyledErrorAlert = styled.div`
     }
 
     & .icon {
-        font-size: 20px;
-        margin-right: 10px;
+        font-size: 36px;
+        margin-right: 8px;
     }
 
     & .message {
         color: #721c24;
-        font-size: 20px;
+        font-size: 32px;
         margin: 0;
     }
 
