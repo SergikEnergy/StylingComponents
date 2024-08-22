@@ -67,56 +67,56 @@
 .items {
     padding: 0 10px;
     letter-spacing: 3px;
+}
 
-    .head {
-        font-size: 24px;
-        line-height: 28px;
-        overflow-y: hidden;
-        text-overflow: ellipsis;
+.head {
+    font-size: 24px;
+    line-height: 28px;
+    overflow-y: hidden;
+    text-overflow: ellipsis;
 
-        transform: translateY(40px);
-        transition: all 0.7s;
+    transform: translateY(40px);
+    transition: all 0.7s;
 
-        // вложенность - древовидная структура, вес селектора увеличивается при вложении - как запись в строку нескольких селекторов
-        hr {
-            display: block;
-            width: 0;
+    // вложенность - древовидная структура, вес селектора увеличивается при вложении - как запись в строку нескольких селекторов
+    hr {
+        display: block;
+        width: 0;
 
-            border: none;
-            border-bottom: solid 2px $bg-main;
+        border: none;
+        border-bottom: solid 2px $bg-main;
 
-            position: absolute;
-            bottom: 0;
-            left: 20px;
+        position: absolute;
+        bottom: 0;
+        left: 20px;
 
-            transition: all 0.5s;
-        }
+        transition: all 0.5s;
     }
+}
 
-    .price {
-        font-size: 22px;
-        line-height: 130%;
-        font-weight: bold;
-        opacity: 0;
-        transform: translateY(40px);
-        transition: all 0.7s;
-    }
+.price {
+    font-size: 22px;
+    line-height: 130%;
+    font-weight: bold;
+    opacity: 0;
+    transform: translateY(40px);
+    transition: all 0.7s;
+}
 
-    .rate {
-        @include left-center-aligned(16px);
-        margin-bottom: 5px;
-        margin-left: 10px;
-        .rate__star {
-            @include custom-icon-size();
-        }
+.rate {
+    @include left-center-aligned(16px);
+    margin-bottom: 5px;
+    margin-left: 10px;
+    .rate__star {
+        @include custom-icon-size();
     }
+}
 
-    .description {
-        max-height: 20%;
-        overflow-y: hidden;
-        text-overflow: ellipsis;
-        padding-bottom: 10px;
-    }
+.description {
+    max-height: 20%;
+    overflow-y: hidden;
+    text-overflow: ellipsis;
+    padding-bottom: 10px;
 }
 
 .container:hover .overlay {
